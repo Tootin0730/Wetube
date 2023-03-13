@@ -1,5 +1,4 @@
 import User from "../models/User";
-import Video from "../models/Video";
 import fetch from "node-fetch";
 import bcrypt from "bcrypt";
 
@@ -19,7 +18,8 @@ export const postJoin = async (req, res) => {
       pageTitle,
       errorMessage: "This username/email is already taken.",
     });
-  }  try {
+  }
+  try {
     await User.create({
       name,
       username,
@@ -35,7 +35,6 @@ export const postJoin = async (req, res) => {
     });
   }
 };
-
 export const getLogin = (req, res) =>
   res.render("login", { pageTitle: "Login" });
 
@@ -44,9 +43,9 @@ export const postLogin = async (req, res) => {
   const pageTitle = "Login";
   const user = await User.findOne({ username, socialOnly: false });
   if (!user) {
-      return res.status(400).render("login", {
-        pageTitle,
-        errorMessage: "An account with this username does not exists.",
+    return res.status(400).render("login", {
+      pageTitle,
+      errorMessage: "An account with this username does not exists.",
     });
   }
   const ok = await bcrypt.compare(password, user.password);
@@ -56,7 +55,7 @@ export const postLogin = async (req, res) => {
       errorMessage: "Wrong password",
     });
   }
-  req.session.logggedin = true;
+  req.session.loggedIn = true;
   req.session.user = user;
   return res.redirect("/");
 };
@@ -125,10 +124,10 @@ export const finishGithubLogin = async (req, res) => {
         socialOnly: true,
         location: userData.location,
       });
+    }
     req.session.loggedIn = true;
     req.session.user = user;
     return res.redirect("/");
-    }
   } else {
     return res.redirect("/login");
   }
@@ -139,8 +138,8 @@ export const logout = (req, res) => {
   return res.redirect("/");
 };
 export const getEdit = (req, res) => {
-  return res.render("edit-profile", { pageTitle: "Edit Profile" })
-}
+  return res.render("edit-profile", { pageTitle: "Edit Profile" });
+};
 export const postEdit = async (req, res) => {
   const {
     session: {
