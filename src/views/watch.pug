@@ -1,4 +1,5 @@
 extends base
+
 block content
     div#videoContainer(data-id=video._id)
         video(src="/" + video.fileUrl)
@@ -18,6 +19,7 @@ block content
             div
                 span#fullScreen
                     i.fas.fa-expand
+
     div.video__data
         p.video__title=video.title
         small.video__owner Uploaded by 
@@ -35,5 +37,9 @@ block content
 
 
 block scripts
+
     script(src="/static/js/videoPlayer.js")
-    script(src="/static/js/commentSection.js") 
+
+    if loggedIn
+
+        script(src="/static/js/commentSection.js") 

@@ -71,7 +71,7 @@ export const postUpload = async (req, res) => {
       title,
       description,
       fileUrl: video[0].path,
-      thumbUrl: thumb[0].path,
+      thumbUrl: thumb[0].path.replace(/[\\]/g, "/"),
       owner: _id,
       hashtags: Video.formatHashtags(hashtags),
     });
@@ -126,4 +126,10 @@ export const registerView = async (req, res) => {
   video.meta.views = video.meta.views + 1;
   await video.save();
   return res.sendStatus(200);
+};
+
+export const createComment = (req, res) => {
+  console.log(req.params);
+  console.log(req.body);
+  return res.end();
 };
