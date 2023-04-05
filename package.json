@@ -1,10 +1,10 @@
 {
     "name": "wetube",
     "version": "1.0.0",
-    "description": "The best way to watch videos.",
+    "description": "Clone coding of Youtube, Wetube!",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/nomadcoders/wetube-reloaded.git"
+        "url": "git+https://github.com/Tootin0730/Wetube"
     },
     "scripts": {
         "start": "node build/init.js",
@@ -14,12 +14,12 @@
         "dev:server": "nodemon",
         "dev:assets": "webpack --mode=development -w"
     },
-    "author": "Nicolas Serrano <nico@nomadcoders.co>",
-    "license": "MIT",
+    "author": "San Yi",
+    "license": "GSU",
     "bugs": {
-        "url": "https://github.com/nomadcoders/wetube-reloaded/issues"
+        "url": "https://github.com/Tootin0730/Wetube"
     },
-    "homepage": "https://github.com/nomadcoders/wetube-reloaded#readme",
+    "homepage": "https://github.com/Tootin0730/Wetube#readme",
     "dependencies": {
         "@ffmpeg/core": "^0.11.0",
         "@ffmpeg/ffmpeg": "^0.11.6",
