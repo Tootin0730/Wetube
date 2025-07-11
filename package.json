@@ -1,5 +1,6 @@
 {
     "name": "wetube",
+    "type": "module",
     "version": "1.0.0",
     "description": "Clone coding of Youtube, Wetube!",
     "repository": {
@@ -7,13 +8,12 @@
         "url": "git+https://github.com/Tootin0730/Wetube"
     },
     "scripts": {
-        "start": "node build/init.js",
-        "build": "npm run build:server && npm run build:assets",
-        "build:server": "babel src -d build",
+        "start": "node src/init.js",
+        "dev": "nodemon src/init.js",
         "build:assets": "webpack --mode=production",
-        "dev:server": "nodemon",
         "dev:assets": "webpack --mode=development -w"
     },
+
     "author": "San Yi",
     "license": "GSU",
     "bugs": {

@@ -1,15 +1,14 @@
-import "regenerator-runtime";
 import "dotenv/config";
-import "./db";
-import "./models/Video";
-import "./models/User";
-import "./models/Comment";
-import app from "./server";
+import "regenerator-runtime";
+import "./db.js";
+import "./models/Video.js";
+import "./models/User.js";
+import "./models/Comment.js";
+import app from "./server.js";
 
 const PORT = process.env.PORT || 4000;
 
 const handleListening = () =>
-  console.log(`✅ Server listenting on http://localhost:${PORT}`);
+  console.log(`✅ Server listening on http://localhost:${PORT}`);
 
 app.listen(PORT, handleListening);
-//er

@@ -3,7 +3,7 @@ import {
   registerView,
   createComment,
   deleteComment,
-} from "../controllers/videoController";
+} from "../controllers/videoController.js";
 
 const apiRouter = express.Router();
 
